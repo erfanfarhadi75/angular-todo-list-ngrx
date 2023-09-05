@@ -1,0 +1,6 @@
+<div class="task-item">
+  <span [ngClass]="{ completed: task.completed }">{{ task.name }}</span>
+  <button (click)="deleteTask()">Delete</button>
+  <button *ngIf="!task.completed" (click)="completeTask()">Complete</button>
+  <button *ngIf="task.completed" (click)="unCompleteTask()">UnComplete</button>
+</div>
