@@ -1,8 +1,13 @@
 <div class="task-form">
   <input
     type="text"
-    [(ngModel)]="newTaskName"
+    [(ngModel)]="name"
     placeholder="Enter task name"
+  />
+  <input
+    type="text"
+    [(ngModel)]="description"
+    placeholder="Enter task Description"
   />
   <button (click)="addTask()">Add Task</button>
 </div>

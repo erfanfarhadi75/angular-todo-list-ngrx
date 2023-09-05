@@ -1,6 +1,6 @@
 import {createSelector} from '@ngrx/store';
 import {AppState, TodoState} from '../app.state';
-import {Task} from "../../model";
+import {ITask} from "../../model";
 
 const selectTodoFeature = (state: AppState) => state.todo;
 
@@ -15,7 +15,7 @@ export const selectFilter = createSelector(
 export const selectFilteredTasks = createSelector(
   selectFilter,
   selectTasks,
-  (filter: string, tasks: Task[]) => {
+  (filter: string, tasks: ITask[]) => {
     if (filter === 'All') {
       return tasks;
     } else if (filter === 'Active') {

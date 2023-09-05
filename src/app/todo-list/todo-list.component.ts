@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {async, Observable} from "rxjs";
-import {Task} from "../model";
+import {ITask} from "../model";
 import {Store} from "@ngrx/store";
 import {setFilter} from "../state/actions";
 import {AppState} from "../state/app.state";
@@ -22,7 +22,7 @@ import {TaskItemComponent} from "../task-item/task-item.component";
   standalone: true
 })
 export class TodoListComponent {
-  tasks$: Observable<Task[]>;
+  tasks$: Observable<ITask[]>;
   filter: string = 'All';
 
   constructor(private store: Store<AppState>) {

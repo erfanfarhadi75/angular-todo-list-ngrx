@@ -13,14 +13,17 @@ import {addTask} from "../state/actions";
   standalone: true
 })
 export class TaskFormComponent {
-  newTaskName: string = '';
+  name: string = '';
+  description: string = '';
 
-  constructor(private store: Store) {}
+  constructor(private store: Store) {
+  }
 
   addTask() {
-    if (this.newTaskName.trim() !== '') {
-      this.store.dispatch(addTask({ name: this.newTaskName }));
-      this.newTaskName = '';
+    if (this.name.trim() !== '') {
+      this.store.dispatch(addTask({name: this.name, description: this.description}));
+      this.name = '';
+      this.description = '';
     }
   }
 }

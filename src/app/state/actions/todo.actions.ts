@@ -2,7 +2,7 @@ import {createAction, props} from "@ngrx/store";
 
 export const addTask = createAction(
   '[Todo] Add Task',
-  props<{ name: string }>()
+  props<{ name: string, description: string }>()
 );
 
 export const completeTask = createAction(

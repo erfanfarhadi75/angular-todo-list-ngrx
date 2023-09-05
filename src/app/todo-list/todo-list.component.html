@@ -1,13 +1,13 @@
+<div class="filter-buttons">
+  <button (click)="setFilter('All')">All</button>
+  <button (click)="setFilter('Active')">Active</button>
+  <button (click)="setFilter('Completed')">Completed</button>
+</div>
+
 <div class="todo-list">
+  <app-task-form></app-task-form>
   <app-task-item
     *ngFor="let task of tasks$ | async"
     [task]="task"
   ></app-task-item>
-  <app-task-form></app-task-form>
-
-  <div class="filter-buttons">
-    <button (click)="setFilter('All')">All</button>
-    <button (click)="setFilter('Active')">Active</button>
-    <button (click)="setFilter('Completed')">Completed</button>
-  </div>
 </div>

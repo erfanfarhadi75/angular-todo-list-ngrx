@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {completeTask, deleteTask, uncompleteTask} from "../state/actions";
-import {Task} from "../model";
+import {ITask} from "../model";
 import {AppState} from "../state/app.state";
 import {FormsModule} from "@angular/forms";
 import {NgClass, NgIf} from "@angular/common";
@@ -18,7 +18,7 @@ import {NgClass, NgIf} from "@angular/common";
   standalone: true
 })
 export class TaskItemComponent {
-  @Input() task!: Task;
+  @Input() task!: ITask;
 
   constructor(private store: Store<AppState>) {
   }

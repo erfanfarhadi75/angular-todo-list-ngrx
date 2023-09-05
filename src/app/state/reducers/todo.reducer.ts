@@ -4,9 +4,9 @@ import {initialTodoState} from "../app.state";
 
 export const todoReducer = createReducer(
   initialTodoState,
-  on(addTask, (state, {name}) => ({
+  on(addTask, (state, {name, description}) => ({
     ...state,
-    tasks: [...state.tasks, {id: Date.now(), name, completed: false}],
+    tasks: [...state.tasks, {id: Date.now(), name,description, completed: false}],
   })),
   on(completeTask, (state, {id}) => ({
     ...state,
