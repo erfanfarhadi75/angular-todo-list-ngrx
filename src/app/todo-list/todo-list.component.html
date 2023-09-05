@@ -1,11 +1,13 @@
-<div class="filter-buttons">
-  <button (click)="setFilter('All')">All</button>
-  <button (click)="setFilter('Active')">Active</button>
-  <button (click)="setFilter('Completed')">Completed</button>
-</div>
-
 <div class="todo-list">
   <app-task-form></app-task-form>
+  <div class="filter-buttons my-2">
+    <mat-button-toggle-group [(ngModel)]="filterType" name="fontStyle" aria-label="Font Style">
+      <mat-button-toggle [value]="'All'" (click)="setFilter('All')">All</mat-button-toggle>
+      <mat-button-toggle [value]="'Active'" (click)="setFilter('Active')">Active</mat-button-toggle>
+      <mat-button-toggle [value]="'Completed'" (click)="setFilter('Completed')">Completed</mat-button-toggle>
+      <mat-button-toggle [value]="'Favorites'" (click)="setFilter('Favorites')">Favorites</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
   <app-task-item
     *ngFor="let task of tasks$ | async"
     [task]="task"

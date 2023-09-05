@@ -1,13 +1,15 @@
 import {Component} from '@angular/core';
 import {async, Observable} from "rxjs";
-import {ITask} from "../model";
+import {ITask, TaskFilterType} from "../model";
 import {Store} from "@ngrx/store";
 import {setFilter} from "../state/actions";
 import {AppState} from "../state/app.state";
-import {selectFilteredTasks} from "../state/selectors";
+import {selectFilter, selectFilteredTasks} from "../state/selectors";
 import {TaskFormComponent} from "../task-form/task-form.component";
-import {AsyncPipe, NgForOf} from "@angular/common";
+import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
 import {TaskItemComponent} from "../task-item/task-item.component";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-todo-list',
@@ -18,19 +20,24 @@ import {TaskItemComponent} from "../task-item/task-item.component";
     TaskItemComponent,
     NgForOf,
     AsyncPipe,
+    MatButtonToggleModule,
+    NgIf,
+    FormsModule,
   ],
   standalone: true
 })
 export class TodoListComponent {
   tasks$: Observable<ITask[]>;
-  filter: string = 'All';
+  filterType!: TaskFilterType;
 
   constructor(private store: Store<AppState>) {
     this.tasks$ = this.store.select(selectFilteredTasks);
+    this.store.select(selectFilter).subscribe(filter => {
+      this.filterType = filter;
+    });
   }
 
-  setFilter(filter: string) {
-    this.filter = filter;
+  setFilter(filter: TaskFilterType) {
     this.store.dispatch(setFilter({filter}));
   }
 }

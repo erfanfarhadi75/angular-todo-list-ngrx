@@ -1,12 +1,34 @@
 import {createReducer, on} from '@ngrx/store';
-import {addTask, completeTask, deleteTask, setFilter, uncompleteTask} from '../actions';
+import {
+  addTask,
+  completeTask,
+  deleteTask,
+  markAsFavorite,
+  removeFromFavorites,
+  setFilter,
+  uncompleteTask
+} from '../actions';
 import {initialTodoState} from "../app.state";
 
 export const todoReducer = createReducer(
   initialTodoState,
   on(addTask, (state, {name, description}) => ({
     ...state,
-    tasks: [...state.tasks, {id: Date.now(), name,description, completed: false}],
+    tasks: [...state.tasks, {id: Date.now(), name, isFavorite: false, description, completed: false}],
+  })),
+  on(markAsFavorite, (state, {id}) => ({
+    ...state,
+    tasks: state.tasks.map(task =>
+      task.id === id ? {...task, isFavorite: true} : task
+    ),
+  })),
+
+  // Handle the REMOVE_FROM_FAVORITES action
+  on(removeFromFavorites, (state, {id}) => ({
+    ...state,
+    tasks: state.tasks.map(task =>
+      task.id === id ? {...task, isFavorite: false} : task
+    ),
   })),
   on(completeTask, (state, {id}) => ({
     ...state,

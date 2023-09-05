@@ -1,10 +1,14 @@
 import {Component, Input} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {completeTask, deleteTask, uncompleteTask} from "../state/actions";
+import {completeTask, deleteTask, markAsFavorite, removeFromFavorites, uncompleteTask} from "../state/actions";
 import {ITask} from "../model";
 import {AppState} from "../state/app.state";
 import {FormsModule} from "@angular/forms";
-import {NgClass, NgIf} from "@angular/common";
+import {AsyncPipe, NgClass, NgIf} from "@angular/common";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import {MatCardModule} from "@angular/material/card";
+import {MatChipsModule} from "@angular/material/chips";
 
 @Component({
   selector: 'app-task-item',
@@ -13,7 +17,12 @@ import {NgClass, NgIf} from "@angular/common";
   imports: [
     FormsModule,
     NgClass,
-    NgIf
+    NgIf,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatChipsModule,
+    AsyncPipe
   ],
   standalone: true
 })
@@ -34,4 +43,13 @@ export class TaskItemComponent {
   unCompleteTask() {
     this.store.dispatch(uncompleteTask({id: this.task.id}));
   }
+
+  addToFavorites() {
+    this.store.dispatch(markAsFavorite({id: this.task.id}));
+  }
+
+  removeFromFavorites() {
+    this.store.dispatch(removeFromFavorites({id: this.task.id}));
+  }
+
 }

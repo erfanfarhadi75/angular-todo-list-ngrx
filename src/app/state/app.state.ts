@@ -1,4 +1,4 @@
-import {ITask} from "../model";
+import {ITask, TaskFilterType} from "../model";
 
 export interface AppState {
   todo: TodoState;
@@ -6,7 +6,7 @@ export interface AppState {
 
 export interface TodoState {
   tasks: ITask[];
-  filter: string; // Filter for displaying tasks (All, Active, Completed)
+  filter: TaskFilterType; // Filter for displaying tasks (All, Active, Completed)
 }
 
 // Define an initial state for the todo feature

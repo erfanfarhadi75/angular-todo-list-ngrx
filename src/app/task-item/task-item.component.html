@@ -1,6 +1,26 @@
-<div class="task-item">
-  <span [ngClass]="{ completed: task.completed }">{{ task.name }}</span>
-  <button (click)="deleteTask()">Delete</button>
-  <button *ngIf="!task.completed" (click)="completeTask()">Complete</button>
-  <button *ngIf="task.completed" (click)="unCompleteTask()">UnComplete</button>
-</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ task.name }}</mat-card-title>
+    <mat-card-subtitle>{{task.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button (click)="deleteTask()" mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+      <mat-icon>delete</mat-icon>
+    </button>
+
+    <mat-chip-listbox  aria-label="Fish selection">
+      <mat-chip-option (click)="completeTask()" *ngIf="!task.completed" color="primary">Done</mat-chip-option>
+      <mat-chip-option (click)="unCompleteTask()" *ngIf="task.completed" color="primary" selected>Done</mat-chip-option>
+    </mat-chip-listbox>
+
+    <button *ngIf="task.isFavorite" (click)="removeFromFavorites()" mat-icon-button color="warn"
+            aria-label="Example icon button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+
+    <button *ngIf="!task.isFavorite" (click)="addToFavorites()" mat-icon-button
+            aria-label="Example icon button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

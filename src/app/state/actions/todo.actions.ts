@@ -1,10 +1,17 @@
 import {createAction, props} from "@ngrx/store";
+import {TaskFilterType} from "../../model";
 
 export const addTask = createAction(
   '[Todo] Add Task',
   props<{ name: string, description: string }>()
 );
 
+export const markAsFavorite = createAction(
+  '[Todo] Mark Task as Favorite', props<{ id: number }>()
+);
+export const removeFromFavorites = createAction(
+  '[Todo] Remove Task from Favorites', props<{ id: number }>()
+);
 export const completeTask = createAction(
   '[Todo] Complete Task',
   props<{ id: number }>()
@@ -20,5 +27,5 @@ export const deleteTask = createAction(
 
 export const setFilter = createAction(
   '[Todo] Set Filter',
-  props<{ filter: string }>()
+  props<{ filter: TaskFilterType }>()
 );
