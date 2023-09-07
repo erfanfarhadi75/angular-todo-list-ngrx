@@ -1,9 +1,9 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {Store} from '@ngrx/store';
-import {MockStore, provideMockStore} from '@ngrx/store/testing';
-import {TaskItemComponent} from './task-item.component';
-import {ITask} from '../model';
-import {AppState} from '../state/app.state';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Store } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { TaskItemComponent } from './task-item.component';
+import { ITask } from '../model';
+import { AppState } from '../state/app.state';
 
 describe('TaskItemComponent', () => {
   let component: TaskItemComponent;
@@ -12,14 +12,9 @@ describe('TaskItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        TaskItemComponent,
-      ],
-      providers: [
-        provideMockStore()
-      ]
-    })
-      .compileComponents();
+      imports: [TaskItemComponent],
+      providers: [provideMockStore()],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -32,7 +27,7 @@ describe('TaskItemComponent', () => {
       name: 'Test task',
       description: 'Test description',
       isFavorite: false,
-      completed: false
+      completed: false,
     } as ITask;
     fixture.detectChanges();
   });

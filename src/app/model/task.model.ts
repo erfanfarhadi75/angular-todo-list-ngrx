@@ -6,5 +6,4 @@ export interface ITask {
   isFavorite: boolean;
 }
 
-
-export type TaskFilterType =  'All' | 'Active' | 'Completed' | 'Favorites'
+export type TaskFilterType = 'All' | 'Active' | 'Completed' | 'Favorites';

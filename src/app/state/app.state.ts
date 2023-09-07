@@ -1,4 +1,4 @@
-import {ITask, TaskFilterType} from "../model";
+import { ITask, TaskFilterType } from '../model';
 
 export interface AppState {
   todo: TodoState;

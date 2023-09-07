@@ -1,8 +1,8 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {Store} from '@ngrx/store';
-import {MockStore, provideMockStore} from '@ngrx/store/testing';
-import {TaskFormComponent} from './task-form.component';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Store } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { TaskFormComponent } from './task-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('TaskFormComponent', () => {
   let component: TaskFormComponent;
@@ -11,15 +11,9 @@ describe('TaskFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        TaskFormComponent,
-        BrowserAnimationsModule
-      ],
-      providers: [
-        provideMockStore()
-      ]
-    })
-      .compileComponents();
+      imports: [TaskFormComponent, BrowserAnimationsModule],
+      providers: [provideMockStore()],
+    }).compileComponents();
   });
 
   beforeEach(() => {

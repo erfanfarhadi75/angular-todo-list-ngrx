@@ -1,16 +1,16 @@
-import {Component} from '@angular/core';
-import {Observable} from "rxjs";
-import {ITask, TaskFilterType} from "../model";
-import {Store} from "@ngrx/store";
-import {setFilter} from "../state/actions";
-import {AppState} from "../state/app.state";
-import {selectFilter, selectFilteredTasks} from "../state/selectors";
-import {TaskFormComponent} from "../task-form/task-form.component";
-import {CommonModule} from "@angular/common";
-import {TaskItemComponent} from "../task-item/task-item.component";
-import {MatButtonToggleModule} from "@angular/material/button-toggle";
-import {FormsModule} from "@angular/forms";
-import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ITask, TaskFilterType } from '../model';
+import { Store } from '@ngrx/store';
+import { setFilter } from '../state/actions';
+import { AppState } from '../state/app.state';
+import { selectFilter, selectFilteredTasks } from '../state/selectors';
+import { TaskFormComponent } from '../task-form/task-form.component';
+import { CommonModule } from '@angular/common';
+import { TaskItemComponent } from '../task-item/task-item.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { FormsModule } from '@angular/forms';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-todo-list',
@@ -23,7 +23,7 @@ import {NoopAnimationsModule} from "@angular/platform-browser/animations";
     FormsModule,
     CommonModule,
   ],
-  standalone: true
+  standalone: true,
 })
 export class TodoListComponent {
   tasks$: Observable<ITask[]>;
@@ -37,6 +37,6 @@ export class TodoListComponent {
   }
 
   setFilter(filter: TaskFilterType) {
-    this.store.dispatch(setFilter({filter}));
+    this.store.dispatch(setFilter({ filter }));
   }
 }

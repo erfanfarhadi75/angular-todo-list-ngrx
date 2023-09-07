@@ -1,6 +1,6 @@
-import {createSelector} from '@ngrx/store';
-import {AppState, TodoState} from '../app.state';
-import {ITask, TaskFilterType} from "../../model";
+import { createSelector } from '@ngrx/store';
+import { AppState, TodoState } from '../app.state';
+import { ITask, TaskFilterType } from '../../model';
 
 const selectTodoFeature = (state: AppState) => state.todo;
 

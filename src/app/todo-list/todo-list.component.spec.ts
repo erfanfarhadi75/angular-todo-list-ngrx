@@ -1,8 +1,8 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {Store} from '@ngrx/store';
-import {MockStore, provideMockStore} from '@ngrx/store/testing';
-import {TodoListComponent} from './todo-list.component';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Store } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { TodoListComponent } from './todo-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('TodoListComponent', () => {
   let component: TodoListComponent;
@@ -15,11 +15,9 @@ describe('TodoListComponent', () => {
         TodoListComponent,
         // TaskFormComponent,
         // TaskItemComponent,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
       ],
-      providers: [
-        provideMockStore()
-      ]
+      providers: [provideMockStore()],
     }).compileComponents();
   });
 

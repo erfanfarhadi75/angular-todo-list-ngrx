@@ -1,12 +1,12 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {BrowserModule} from '@angular/platform-browser';
-import {Store, StoreModule} from '@ngrx/store';
-import {MockStore, provideMockStore} from '@ngrx/store/testing';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
+import { Store, StoreModule } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {AppComponent} from './app.component';
-import {TodoListComponent} from './todo-list/todo-list.component';
-import {todoReducer} from "./state/reducers";
+import { AppComponent } from './app.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { todoReducer } from './state/reducers';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -15,18 +15,14 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-      ],
+      declarations: [AppComponent],
       imports: [
         TodoListComponent,
         BrowserModule,
         BrowserAnimationsModule,
-        StoreModule.forRoot({todo: todoReducer}, {})
+        StoreModule.forRoot({ todo: todoReducer }, {}),
       ],
-      providers: [
-        provideMockStore()
-      ]
+      providers: [provideMockStore()],
     }).compileComponents();
   });
 
