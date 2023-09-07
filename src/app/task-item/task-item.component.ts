@@ -4,7 +4,7 @@ import {completeTask, deleteTask, markAsFavorite, removeFromFavorites, uncomplet
 import {ITask} from "../model";
 import {AppState} from "../state/app.state";
 import {FormsModule} from "@angular/forms";
-import {AsyncPipe, NgClass, NgIf} from "@angular/common";
+import {CommonModule} from "@angular/common";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
@@ -16,13 +16,11 @@ import {MatChipsModule} from "@angular/material/chips";
   styleUrls: ['./task-item.component.scss'],
   imports: [
     FormsModule,
-    NgClass,
-    NgIf,
     MatIconModule,
     MatButtonModule,
     MatCardModule,
     MatChipsModule,
-    AsyncPipe
+    CommonModule
   ],
   standalone: true
 })

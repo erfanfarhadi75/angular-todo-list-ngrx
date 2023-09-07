@@ -6,7 +6,6 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
-import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-task-form',
@@ -18,7 +17,6 @@ import {NgIf} from "@angular/common";
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    NgIf
   ],
   standalone: true
 })

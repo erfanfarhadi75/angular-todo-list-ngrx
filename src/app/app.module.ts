@@ -7,7 +7,7 @@ import {StoreModule} from '@ngrx/store';
 import {TodoListComponent} from "./todo-list/todo-list.component";
 import {todoReducer} from "./state/reducers";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     StoreModule.forRoot({todo: todoReducer}, {}),
     StoreDevtoolsModule.instrument({}),
     TodoListComponent,
-    NoopAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
