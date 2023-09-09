@@ -11,6 +11,7 @@ import { TaskItemComponent } from '../task-item/task-item.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-todo-list',
@@ -22,6 +23,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonToggleModule,
     FormsModule,
     CommonModule,
+    MatIconModule
   ],
   standalone: true,
 })

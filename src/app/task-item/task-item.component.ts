@@ -4,7 +4,9 @@ import {
   completeTask,
   deleteTask,
   markAsFavorite,
+  markAsNotificationsAction,
   removeFromFavorites,
+  removeFromNotificationsAction,
   uncompleteTask,
 } from '../state/actions';
 import { ITask } from '../model';
@@ -53,5 +55,14 @@ export class TaskItemComponent {
 
   removeFromFavorites() {
     this.store.dispatch(removeFromFavorites({ id: this.task.id }));
+  }
+
+  
+  onAddToNotifications(){
+  this.store.dispatch(markAsNotificationsAction({ id: this.task.id }));
+  }
+
+  onRemoveFromNotifications() {
+    this.store.dispatch(removeFromNotificationsAction({id: this.task.id}))
   }
 }

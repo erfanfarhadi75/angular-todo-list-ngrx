@@ -10,6 +10,7 @@ export const markAsFavorite = createAction(
   '[Todo] Mark Task as Favorite',
   props<{ id: number }>()
 );
+
 export const removeFromFavorites = createAction(
   '[Todo] Remove Task from Favorites',
   props<{ id: number }>()
@@ -32,3 +33,14 @@ export const setFilter = createAction(
   '[Todo] Set Filter',
   props<{ filter: TaskFilterType }>()
 );
+
+export const markAsNotificationsAction = createAction(
+  '[Todo] Mark As Notifications',
+  props<{id : number}>()
+);
+
+export const removeFromNotificationsAction = createAction(
+  '[Todo] Remove From Notifications',
+  props<{id :number}>()
+)
+
