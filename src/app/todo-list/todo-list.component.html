@@ -15,8 +15,16 @@
         >Completed</mat-button-toggle
       >
       <mat-button-toggle [value]="'Favorites'" (click)="setFilter('Favorites')"
-        >Favorites</mat-button-toggle
-      >
+        >Favorites        
+      </mat-button-toggle>
+
+      
+      <mat-button-toggle [value]="'Favorites'" (click)="setFilter('Notification')"
+        >Notification        
+      </mat-button-toggle>
+
+
+
     </mat-button-toggle-group>
   </div>
   <app-task-item

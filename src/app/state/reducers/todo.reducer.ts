@@ -4,7 +4,9 @@ import {
   completeTask,
   deleteTask,
   markAsFavorite,
+  markAsNotificationsAction,
   removeFromFavorites,
+  removeFromNotificationsAction,
   setFilter,
   uncompleteTask,
 } from '../actions';
@@ -22,6 +24,7 @@ export const todoReducer = createReducer(
         isFavorite: false,
         description,
         completed: false,
+        isNotification: false,
       },
     ],
   })),
@@ -58,5 +61,17 @@ export const todoReducer = createReducer(
   on(setFilter, (state, { filter }) => ({
     ...state,
     filter,
-  }))
+  })) ,
+  on(markAsNotificationsAction , (state, { id }) => ({
+    ...state,
+    tasks: state.tasks.map(task=>
+      task.id === id ? { ...task , isNotification:true} : task
+      ),
+  })) ,
+
+  on(removeFromNotificationsAction , (state, { id }) => ({
+    ...state,
+    tasks: state.tasks.map(task=>
+      task.id === id ? {...task , isNotification : false} : task),
+  })),
 );

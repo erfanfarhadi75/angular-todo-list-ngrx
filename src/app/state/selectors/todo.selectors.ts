@@ -25,6 +25,8 @@ export const selectFilteredTasks = createSelector(
         return tasks.filter(task => task.completed);
       case 'Favorites':
         return tasks.filter(task => task.isFavorite);
+      case 'Notification' :
+        return tasks.filter(task => task.isNotification);
       default:
         return tasks;
     }
