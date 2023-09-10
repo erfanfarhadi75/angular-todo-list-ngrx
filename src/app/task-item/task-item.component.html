@@ -50,16 +50,16 @@
       (click)="onAddToNotifications()"
       mat-icon-button
       aria-label="is notifications">
-      <mat-icon fontIcon="notifications_none"></mat-icon>            
+      <mat-icon fontIcon="notifications_none"></mat-icon>
     </button>
     <button
       *ngIf="task.isNotification"
       (click)="onRemoveFromNotifications()"
       mat-icon-button
-      aria-label="is notifications">      
-      <mat-icon fontIcon="notifications" [style.color]="'green'"></mat-icon>      
+      aria-label="remove notifications">
+      <mat-icon fontIcon="notifications" [style.color]="'green'"></mat-icon>
     </button>
-    
- 
+
+
   </mat-card-actions>
 </mat-card>
