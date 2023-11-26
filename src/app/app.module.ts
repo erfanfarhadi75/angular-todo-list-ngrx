@@ -15,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({ todo: todoReducer }, {}),
-    StoreDevtoolsModule.instrument({}),
+    StoreDevtoolsModule.instrument({ connectInZone: true }),
     TodoListComponent,
     BrowserAnimationsModule,
   ],
